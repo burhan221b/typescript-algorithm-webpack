@@ -1,0 +1,99 @@
+# TypeScript Algorithm Webpack
+### Created by Burhan 
+#### July 26, 2020
+##### Version 1.0.0
+---
+
+## This is a program designed to run algorithms using command line written in TypeScript and Webpack 
+
+### Steps to create your own in TypeScript project using Webpack
+#### **For MacOS**
+1. Open Terminal and using "cd" go to directory to place your project i.e. Desktop, or Documents
+1. Create a new empty folder for the project.
+```bash
+mkdir ProjectName
+```
+3. Enter the folder directory. 
+```bash
+cd ProjectName
+```
+4. Make sure you have TypeScript installed globally 
+```bash
+npm install -g typescript
+```
+5. The **tsconfig.json** file will be created using the code below, this will help us customize TypeScript with its rules.
+```bash
+tsc --init
+```
+6. We create a **package.json** file which will tell the project what packages and scripts are needed. We also need this to install webpack and loaders. We use the npm cli
+```bash
+npm init 
+```
+7. This is to help us with version control. 
+```bash
+git init
+```
+8. Install the webpack, webpack-cli, and the ts loader as developer dependencies. 
+```bash
+npm install --save-dev webpack webpack-cli ts-loader
+```
+9. Inside the root direcotry, create a folder called "src" and inside "src" create a new file called "index.ts" with a sample code i.e.:
+```javascript
+console.log("Hello World");
+```
+10. Create a **webpack.config.js** file in root directory of the project. This file is the configuration for telling webpack how to handle different files of a program.
+```bash
+touch webpack.config.js
+```
+11. In **webpack.config.js** file, add the following block of code as a template to start which already includes ts-loader:
+```javascript
+const webpack = require('webpack');
+const path = require("path");
+
+module.exports = {
+    mode: "development",
+    entry: "./src/index.ts",
+    output: {
+        filename: "index.js",
+        path: path.resolve(__dirname, "public")
+    },
+    //For loader options: webpack >= v2.0.0 no longer allows custom properties in configuration.
+    plugins: [
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                modules: {
+                    rules: [
+                        {
+                            test: /\.ts$/,
+                            use: "ts-loader",
+                            include: path.resolve(__dirname, "src")
+                        }
+                    ]
+                }
+            }
+        })
+    ]
+}
+```
+12. In **package.json**, create two new scripts called "build" which will only compile the index.ts to index.js under the new folder public and "start" will do the same as build, but also run the newly created index.js with nodeJS.
+```json
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack && node ./public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+``` 
+13. To remove any folders and files that shouldn’t be saved in git for memory performance and privacy reasons. 
+```bash
+touch .gitignore
+```
+14. We don't want node_modules (as this is installed within client local computer) and the public (or whatever you name the build folder) in the git as this is dynamically created. Add “node_modules” and "public" into **.gitignore** file
+```
+node_modules
+public
+```
+
+##### References used to create this program
+##### * [Colt Steele](https://www.youtube.com/playlist?list=PLblA84xge2_zwxh3XJqy6UVxS60YdusY8)
+##### * [The Net Ninja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hOkGbwzgYFmaxB0WiduYJC)
+##### * [Traversy Media](http://www.traversymedia.com)

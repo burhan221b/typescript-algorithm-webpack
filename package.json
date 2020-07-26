@@ -1,0 +1,25 @@
+{
+  "name": "typescript-algorithm-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack && node ./public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "algorithms",
+    "webpack",
+    "javascript",
+    "nodejs"
+  ],
+  "author": "Burhan",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-loader": "^8.0.1",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
