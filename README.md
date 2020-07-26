@@ -25,27 +25,32 @@ npm install -g typescript
 ```bash
 tsc --init
 ```
-6. We create a **package.json** file which will tell the project what packages and scripts are needed. We also need this to install webpack and loaders. We use the npm cli
+6. In the **tsconfig.json** file, change the target to “es6” and module to “es2015”.
+```json
+    "target": "es6",    /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
+    "module": "es2015", /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
+``` 
+7. We create a **package.json** file which will tell the project what packages and scripts are needed. We also need this to install webpack and loaders. We use the npm cli
 ```bash
 npm init 
 ```
-7. This is to help us with version control. 
+8. This is to help us with version control. 
 ```bash
 git init
 ```
-8. Install the webpack, webpack-cli, and the ts loader as developer dependencies. 
+9. Install the webpack, webpack-cli, and the ts loader as developer dependencies. 
 ```bash
 npm install --save-dev webpack webpack-cli ts-loader
 ```
-9. Inside the root direcotry, create a folder called "src" and inside "src" create a new file called "index.ts" with a sample code i.e.:
+10. Inside the root direcotry, create a folder called "src" and inside "src" create a new file called "index.ts" with a sample code i.e.:
 ```javascript
 console.log("Hello World");
 ```
-10. Create a **webpack.config.js** file in root directory of the project. This file is the configuration for telling webpack how to handle different files of a program.
+11. Create a **webpack.config.js** file in root directory of the project. This file is the configuration for telling webpack how to handle different files of a program.
 ```bash
 touch webpack.config.js
 ```
-11. In **webpack.config.js** file, add the following block of code as a template to start which already includes ts-loader:
+12. In **webpack.config.js** file, add the following block of code as a template to start which already includes ts-loader:
 ```javascript
 const webpack = require('webpack');
 const path = require("path");
@@ -75,7 +80,7 @@ module.exports = {
     ]
 }
 ```
-12. In **package.json**, create two new scripts called "build" which will only compile the index.ts to index.js under the new folder public and "start" will do the same as build, but also run the newly created index.js with nodeJS.
+13. In **package.json**, create two new scripts called "build" which will only compile the index.ts to index.js under the new folder public and "start" will do the same as build, but also run the newly created index.js with nodeJS.
 ```json
   "scripts": {
     "build": "webpack",
@@ -83,15 +88,20 @@ module.exports = {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
 ``` 
-13. To remove any folders and files that shouldn’t be saved in git for memory performance and privacy reasons. 
+14. To remove any folders and files that shouldn’t be saved in git for memory performance and privacy reasons. 
 ```bash
 touch .gitignore
 ```
-14. We don't want node_modules (as this is installed within client local computer) and the public (or whatever you name the build folder) in the git as this is dynamically created. Add “node_modules” and "public" into **.gitignore** file
+15. We don't want node_modules (as this is installed within client local computer) and the public (or whatever you name the build folder) in the git as this is dynamically created. Add “node_modules” and "public" into **.gitignore** file
 ```
 node_modules
 public
 ```
+16. To run the program and see the results in the command line terminal, run this code:
+```bash
+npm run start
+```
+17. Now you can see the program dynamically created the "public" folder which contains the bundled up JavaScript file **index.js**. This is our compiled TypeScript from index.ts
 
 ##### References used to create this program
 ##### * [Colt Steele](https://www.youtube.com/playlist?list=PLblA84xge2_zwxh3XJqy6UVxS60YdusY8)
