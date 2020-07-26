@@ -1,4 +1,4 @@
-# TypeScript Algorithm Webpack
+# ![Burhan221b Logo](https://drive.google.com/uc?export=view&id=1ShYHkaVxVpVDLmUVV8YhigZ-Kju3hJry) TypeScript Algorithm Webpack
 ### Created by Burhan 
 #### July 26, 2020
 ##### Version 1.0.0
@@ -42,7 +42,7 @@ git init
 ```bash
 npm install --save-dev webpack webpack-cli ts-loader
 ```
-10. Inside the root direcotry, create a folder called "src" and inside "src" create a new file called "index.ts" with a sample code i.e.:
+10. Inside the root directory, create a folder called "src" and inside "src" create a new file called "index.ts" with a sample code i.e.:
 ```javascript
 console.log("Hello World");
 ```
@@ -107,3 +107,4 @@ npm run start
 ##### * [Colt Steele](https://www.youtube.com/playlist?list=PLblA84xge2_zwxh3XJqy6UVxS60YdusY8)
 ##### * [The Net Ninja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hOkGbwzgYFmaxB0WiduYJC)
 ##### * [Traversy Media](http://www.traversymedia.com)
+
