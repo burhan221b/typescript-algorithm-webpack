@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require("path");
 
 module.exports = {
@@ -8,19 +7,17 @@ module.exports = {
         filename: "index.js",
         path: path.resolve(__dirname, "public")
     },
-    plugins: [
-        new webpack.LoaderOptionsPlugin({
-            options: {
-                modules: {
-                    rules: [
-                        {
-                            test: /\.ts$/,
-                            use: "ts-loader",
-                            include: path.resolve(__dirname, "src")
-                        }
-                    ]
-                }
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                use: "ts-loader",
+                include: path.resolve(__dirname, "src"),
+                exclude: /node_modules/,
             }
-        })
-    ]
+        ]
+    },
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
+    },
 }
