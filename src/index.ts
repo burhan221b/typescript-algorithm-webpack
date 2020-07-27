@@ -1,4 +1,4 @@
-import { reverseString, isPalindrome, reverseInt, capitalizedLetters } from "./session_1/index";
+import { reverseString, isPalindrome, reverseInt, capitalizedLetters, maxCharacter } from "./session_1/index";
 
 console.log("Hello World");
 
@@ -11,4 +11,6 @@ console.log(isPalindrome("hello world")); // false
 console.log(reverseInt(221)); // 122
 console.log(reverseInt(521)); // 125
 
-console.log(capitalizedLetters("i like typescript")); 
+console.log(capitalizedLetters("i like typescript")); // I Like Typescript
+
+console.log(maxCharacter('javascript')) // a

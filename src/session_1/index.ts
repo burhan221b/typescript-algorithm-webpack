@@ -3,6 +3,7 @@ import reverseString from "./reverseString";
 import isPalindrome from "./isPalindrome";
 import reverseInt from "./reverseInt";
 import capitalizedLetters from "./capitalizedLetters";
+import maxCharacter from "./maxCharacter";
 
 // Include all the algorithms from imported from session_1 folder and export here
-export { reverseString, isPalindrome, reverseInt, capitalizedLetters };
+export { reverseString, isPalindrome, reverseInt, capitalizedLetters, maxCharacter };
