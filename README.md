@@ -6,6 +6,11 @@
 
 ## This is a program designed to run algorithms using command line written in TypeScript and Webpack 
 
+### The branches:
+1. **master** - will contain files from all the branches. No specific information will be written on master branch.
+2. **starter** - will contain only the starter files, its the boilerplate for this project. Any updates on README.md, .gitignore, and common files will he placed here.
+3. **session_#** - each session will have its own branch. These branches will be different algorithm groups, only to be merged by master branch.
+
 ### Steps to create your own in TypeScript project using Webpack
 #### **For MacOS**
 1. Open Terminal and using "cd" go to directory to place your project i.e. Desktop, or Documents
