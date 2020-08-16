@@ -29,9 +29,9 @@ npm install typescript --save-dev
 ```bash
 tsc --init
 ```
-7. In the **tsconfig.json** file, change the target to “es6” and module to “es2015”.
+7. In the **tsconfig.json** file, change the target to “esnext” and module to “es2015” (or whatever config you'd like).
 ```json
-    "target": "es6",    /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
+    "target": "esnext",    /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
     "module": "es2015", /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
 ``` 
 8. We create a **package.json** file which will tell the project what packages and scripts are needed. We also need this to install webpack and loaders. We use the npm cli
